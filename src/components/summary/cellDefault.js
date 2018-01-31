@@ -1,9 +1,10 @@
 import AWS from 'aws-sdk';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import config from './../../config/main';
 
-class Cell1 extends Component {
+class Cell extends Component {
 
   constructor(props) {
     super(props);
@@ -41,4 +42,14 @@ class Cell1 extends Component {
 
 }
 
-export default Cell1;
+Cell.propTypes = {
+  user_id: PropTypes.string,
+  favourited: PropTypes.number,
+  flamed: PropTypes.number,
+  visited: PropTypes.number,
+  profile_meta_data: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+};
+
+export default Cell;

@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import Cell1 from './cellDefault';
+import Cell from './cellDefault';
 
 class Main extends Component {
 
@@ -9,14 +10,18 @@ class Main extends Component {
     let flame = [];
     let visit = [];
     this.props.summary.relationships.forEach((r) => {
-      if (r.type_id === 200902 && r.user_id === this.props.me.user_id) {
-        favourite.push(r.to_user_id);
-      }
-      if (r.type_id === 200903 && r.user_id === this.props.me.user_id) {
-        flame.push(r.to_user_id);
-      }
-      if (r.type_id === 200907 && r.user_id === this.props.me.user_id) {
-        visit.push(r.to_user_id);
+      if (r.user_id === this.props.me.user_id) {
+        switch (r.type_id) {
+          case 200902:
+            favourite.push(r.to_user_id);
+            break;
+          case 200903:
+            flame.push(r.to_user_id);
+            break;
+          case 200907:
+            visit.push(r.to_user_id);
+            break;
+        }
       }
     });
     let cells = [];
@@ -24,7 +29,7 @@ class Main extends Component {
       let f = favourite.indexOf(user.user_id);
       let fl = flame.indexOf(user.user_id);
       let v = visit.indexOf(user.user_id);
-      cells.push(<Cell1 {...user} key={user.user_id} favourited={f} flamed={fl} visited={v} />);
+      cells.push(<Cell {...user} key={user.user_id} favourited={f} flamed={fl} visited={v} />);
     });
     return (
       <div>{cells}</div>
@@ -32,5 +37,15 @@ class Main extends Component {
   }
 
 }
+
+Main.propTypes = {
+  me: PropTypes.shape({
+    user_id: PropTypes.number,
+  }),
+  summary: PropTypes.shape({
+    relationships: PropTypes.object,
+    users: PropTypes.object,
+  }),
+};
 
 export default Main;

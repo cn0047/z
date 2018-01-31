@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
@@ -25,6 +26,12 @@ class SummaryScreen extends Component {
   }
 
 }
+
+SummaryScreen.propTypes = {
+  me: PropTypes.shape({
+    user_id: PropTypes.number,
+  }),
+};
 
 const mapStateToProps = (state) => {
   return {me: state.me, summary: state.summary};

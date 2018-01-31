@@ -1,7 +1,7 @@
 const me = (state = {}, action) => {
+  let d = action.payload;
   switch (action.type) {
     case 'ME_AFTER_LOG_IN':
-      let d = action.payload;
       return {
         ...d.user,
         token: d.token,

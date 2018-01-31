@@ -1,8 +1,9 @@
 const summary = (state = {nextFrom: 0, users: [], relationships: []}, action) => {
+  let d = action.payload;
+  let nextFrom = 0;
+
   switch (action.type) {
     case 'SUMMARY_AFTER_LOAD_FEED':
-      let d = action.payload;
-      let nextFrom = 0;
       if (d.hasOwnProperty('paging') && d.paging.hasOwnProperty('next_from')) {
         nextFrom = d.paging.next_from;
       }
