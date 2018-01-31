@@ -22,4 +22,4 @@ App.propTypes = {
   history: PropTypes.object.isRequired
 };
 
-export default App
+export default App;
