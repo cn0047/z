@@ -11,6 +11,7 @@
     text-align: center;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
+
 .ssc1 {
     border: 1px solid lightgray;
     cursor: pointer;
@@ -31,6 +32,7 @@
     vertical-align: middle;
     width: 250px;
 }
+
 .ssc2 {
     border: 1px solid lightgray;
     cursor: pointer;
@@ -50,4 +52,24 @@
     text-align: center;
     vertical-align: middle;
     width: 183px;
+}
+
+
+.ssc3 {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 185px;
+    margin: 3px;
+    padding: 0;
+    width: 185px;
+}
+.ssc3 .cb {
+    background-color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    opacity: 0.6;
+    padding: 5px 1px 5px 1px;
+    position: relative;
+    text-align: center;
+    top: -32px;
 }

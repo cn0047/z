@@ -1,7 +1,7 @@
 const config = {
   apiUrl: 'https://api.*.com/v1',
   aws: {
-    mail: {
+    main: {
       accessKeyId: '',
       secretAccessKey: '',
       region: 'eu-west-1'

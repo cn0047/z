@@ -1,10 +1,10 @@
 import config from './../config/main';
 
 export const loadFeed = (me) => (dispatch) => {
-  let from = 0;
-  let limit = 50;
-  let url = config.apiUrl + '/users?online=1&pictures=1&from=' + from + '&limit=' + limit;
-  let request = new Request(url, {
+  const from = 0;
+  const limit = 50;
+  const url = config.apiUrl + '/users?online=1&pictures=1&from=' + from + '&limit=' + limit;
+  const request = new Request(url, {
     headers: new Headers({'X-AUTH-TOKEN': me.token})
   });
   fetch(request)

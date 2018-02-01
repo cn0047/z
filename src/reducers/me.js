@@ -1,5 +1,5 @@
 const me = (state = {}, action) => {
-  let d = action.payload;
+  const d = action.payload;
   switch (action.type) {
     case 'ME_AFTER_LOG_IN':
       return {

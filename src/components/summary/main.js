@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import Cell from './cellDefault';
+import Cell from './cell/simple';
 
 class Main extends Component {
 
   render() {
-    let favourite = [];
-    let flame = [];
-    let visit = [];
+    const favourite = [];
+    const flame = [];
+    const visit = [];
     this.props.summary.relationships.forEach((r) => {
       if (r.user_id === this.props.me.user_id) {
         switch (r.type_id) {
@@ -24,11 +24,11 @@ class Main extends Component {
         }
       }
     });
-    let cells = [];
+    const cells = [];
     this.props.summary.users.forEach((user) => {
-      let f = favourite.indexOf(user.user_id);
-      let fl = flame.indexOf(user.user_id);
-      let v = visit.indexOf(user.user_id);
+      const f = favourite.indexOf(user.user_id);
+      const fl = flame.indexOf(user.user_id);
+      const v = visit.indexOf(user.user_id);
       cells.push(<Cell {...user} key={user.user_id} favourited={f} flamed={fl} visited={v} />);
     });
     return (
@@ -43,8 +43,8 @@ Main.propTypes = {
     user_id: PropTypes.number,
   }),
   summary: PropTypes.shape({
-    relationships: PropTypes.object,
-    users: PropTypes.object,
+    relationships: PropTypes.array,
+    users: PropTypes.array,
   }),
 };
 

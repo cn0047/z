@@ -1,5 +1,5 @@
 const summary = (state = {nextFrom: 0, users: [], relationships: []}, action) => {
-  let d = action.payload;
+  const d = action.payload;
   let nextFrom = 0;
 
   switch (action.type) {
