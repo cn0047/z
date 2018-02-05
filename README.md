@@ -9,4 +9,4 @@ This project is `reactjs` ⚛️ based super simple social network feed
 built as Single Page Application.
 
 Despite fact that this project built for demo purposes
-it's already *deployable* and production ready skeleton for the real-world project.
+it's already *deployable* and *production ready* skeleton for the *real-world project*.
