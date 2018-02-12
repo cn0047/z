@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { render } from 'react-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import './../public/main.css';
+import './styles/main.css';
 import App from './containers/app';
 import config from "./config/main";
 import configureStore from './store/main';

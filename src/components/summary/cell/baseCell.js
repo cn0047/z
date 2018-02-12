@@ -1,6 +1,6 @@
 import AWS from 'aws-sdk';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 import config from './../../../config/main';
 
