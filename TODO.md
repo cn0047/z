@@ -6,3 +6,4 @@ TODO:
 3. Add feed autoscroll.
 4. Check AWS key after build.
 5. Deploy to heroku.
+6. Add tests.
