@@ -2,7 +2,7 @@
   "name": "z",
   "version": "0.1.0",
   "private": true,
-  "author": "Vladimir Kovpak",
+  "author": "Vladimir Kovpak <cn007b@gmail.com>",
   "license": "",
   "dependencies": {
     "aws-sdk": "^2.22.0",
